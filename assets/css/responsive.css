@@ -75,7 +75,7 @@
   }
   /* End Header */
 
-  /* Band Section */
+  /* Band */
   .mobile-col {
     width: 100%;
   }
@@ -99,15 +99,19 @@
   .band-section .row p {
     font-size: 30px;
   }
-  /* End Band Section */
+  /* End Band */
 
-  /* Contact Section*/
+  /* Contact */
   .contact-info {
     margin-bottom: 20px;
   }
-  /* End Contact Section */
 
-  /* Footer Section */
+  .name-input-mobile  {
+    margin-bottom: 8px;
+  }
+  /* End Contact */
+
+  /* Footer */
   #footer {
     padding: 24px 40px 12px;
   }
@@ -138,9 +142,9 @@
   .footer-line-2 {
     letter-spacing: 0.5px;
   }
-  /* End Footer Section */
+  /* End Footer */
 
-  /* Modal Interface  */
+  /* Modal */
   .mobile-modal-container {
     margin: 80px 32px auto;
   }
@@ -148,6 +152,6 @@
   .modal-header {
     padding: 16px;
   }
-  /* End Modal Interface  */
+  /* End Modal */
 }
 /* End Smartphones Interface */

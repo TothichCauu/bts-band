@@ -1,2 +1,3 @@
 # bts-band
-Online BTS Show Booking
+
+BTS Show Tickets Online Booking Website

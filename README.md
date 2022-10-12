@@ -1,11 +1,11 @@
 # BTS Band
-This project is a website based on [The Band Template](https://shorturl.at/aNVY5) on W3schools.
+This project is a website based on [The Band Template](https://bit.ly/3rNrM6b) on W3schools.
 ## Image
-![](https://shorturl.at/bpsER)
-![](https://shorturl.at/SVWX7)
+![](https://bit.ly/3SOLla9)
+![](https://bit.ly/3CRMbgL)
 ## Live Preview
 [Preview](https://btsband.vercel.app/)
-## Technology used in the application
+## Technologies used in the project
 * HTML
 * CSS
 * Javascript

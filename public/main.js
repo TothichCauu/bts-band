@@ -1,61 +1,55 @@
-//Query Selector Shorthands
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
-//Handle auto slideshow
+// Handle auto slideshow
 let index = 0;
 const autoSlideShow = () => {
-    const x = $$('.slider-section');
-    for (let i = 0; i < x.length; i++) x[i].style.display = 'none';
+    const x = $('.slider-section');
+    x.hide();
 
     index++;
     if (index > x.length) index = 1;
 
-    x[index - 1].style.display = 'block';
+    x.eq(index - 1).show();
     setTimeout(autoSlideShow, 4000);
 };
 autoSlideShow();
 
-//Handle buy tickets modal
+// Handle buy tickets modal
 const modal = $('.js-modal');
 const modalContainer = $('.js-modal-container');
 
-const buyButtons = $$('.js-buy-tickets');
+const buyButtons = $('.js-buy-tickets');
 const closeButton = $('.js-modal-close');
 
-const showModal = () => modal.classList.add('open');
-const hideModal = () => modal.classList.remove('open');
+const showModal = () => modal.addClass('open');
+const hideModal = () => modal.removeClass('open');
 
-for (const buyButton of buyButtons) {
-    buyButton.onclick = showModal;
-}
-closeButton.onclick = hideModal;
+buyButtons.on('click', showModal);
+closeButton.on('click', hideModal);
 
-modal.onclick = hideModal;
-modalContainer.onclick = (e) => e.stopPropagation();
+modal.on('click', hideModal);
+modalContainer.on('click', (e) => e.stopPropagation());
 
-//Handle header on mobiles
+// Handle header on mobiles
 const header = $('#header');
-
-if (header.clientWidth > 740) {
-    header.classList.remove('mobile-close-header');
+if (header.width() > 740) {
+    header.removeClass('mobile-close-header');
 } else {
-    header.classList.add('mobile-close-header');
+    header.addClass('mobile-close-header');
 }
 
-const shrinkMenu = () => header.classList.add('mobile-close-header');
-const expandMenu = () => header.classList.remove('mobile-close-header');
+const shrinkMenu = () => header.addClass('mobile-close-header');
+const expandMenu = () => header.removeClass('mobile-close-header');
 
 const mobileMenu = $('#mobile-menu');
-mobileMenu.onclick = () => {
-    let isClosed = header.clientHeight === mobileMenu.clientHeight;
+
+mobileMenu.on('click', () => {
+    let isClosed = header.height() === mobileMenu.innerHeight();
     if (isClosed) {
         expandMenu();
-        header.style.height = 'auto';
-    } else shrinkMenu();
-};
+        header.css('height', 'auto');
+    } else {
+        shrinkMenu();
+    }
+});
 
-const menuItems = $$('.nav > li > a');
-for (let i = 0; i < menuItems.length; i++) {
-    menuItems[i].onclick = shrinkMenu;
-}
+const menuItems = $('.nav > li > a');
+menuItems.on('click', shrinkMenu);
